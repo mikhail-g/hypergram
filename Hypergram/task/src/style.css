@@ -1,0 +1,59 @@
+body {
+    background-color: lightgrey;
+    margin: 1vh;
+}
+
+.main-container {
+    height: 98vh;
+    display: flex;
+}
+
+.image-panel {
+    flex-basis: 80%;
+    background-color: aliceblue;
+}
+
+.right-panel {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    background-color: skyblue;
+}
+
+.right-panel-content {
+    display: flex;
+    flex-flow: column;
+    flex-basis: 100%;
+}
+
+.right-panel-item {
+    display: flex;
+    flex-flow: column;
+    margin: 15px 30px;
+}
+
+#file-input {
+    display: none;
+}
+
+label {
+    text-align:center;
+}
+
+.button {
+    line-height: 30px;
+    height: 30px;
+    background-color: pink;
+    border: none;
+    border-radius: 0.25em;
+    font-family: arial, sans-serif;
+    font-size: 0.9em;
+}
+
+.button:hover {
+    background-color: lightpink;
+}
+
+.button:focus {
+    background-color: #6f698d;
+}

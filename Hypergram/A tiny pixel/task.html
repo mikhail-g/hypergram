@@ -1,0 +1,74 @@
+<h5>Description</h5>
+
+<p>It's time to add the actual editing to the app. Begin with adding event handlers to the sliders so that you can work with image pixels and know when their values are changed.</p>
+
+<h5>Theory</h5>
+
+<p>To get started with image pixels, you need to get the <code class="language-javascript">2D</code> context of the canvas with the <code class="language-javascript">getContext()</code> method:</p>
+
+<pre><code class="language-javascript">const ctx = canvas.getContext('2d');</code></pre>
+
+<p>After that, you have to get <code class="language-javascript">ImageData</code> object that stores array of the pixels:</p>
+
+<pre><code class="language-javascript">const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);</code></pre>
+
+<p>Now, you can get a pixel array. It is stored inside <code class="language-javascript">imageData.data</code> object:</p>
+
+<pre><code class="language-javascript">const pixels = imageData.data;</code></pre>
+
+<p>After that, you can change the pixel values and apply them. The <code class="language-javascript">RBGA</code> color model describes each pixel of the canvas. It means that each pixel is a set of 4 numbers, where the first number describes the <strong>red</strong> color intensity, the second number is the <strong>green</strong> color, the third number describes the <strong>blue</strong> color, and the fourth number is the <strong>alpha</strong> parameter that describes the pixel transparency. The alpha parameter is a number between 0 (completely transparent) and 255 (completely opaque).</p>
+
+<p>The pixels are stored in a one-dimensional array; the first 4 numbers describe the first pixel, the second 4 numbers describe the second pixel, and so on:</p>
+
+<pre><code class="language-javascript">pixels[0] // the RED value of the first pixel
+pixels[1] // the GREEN value of the first pixel
+pixels[2] // the BLUE value of the first pixel
+pixels[3] // the ALPHA value of the first pixel
+
+pixels[4] // the RED value of the second pixel
+pixels[5] // the GREEN value of the second pixel
+pixels[6] // the BLUE value of the second pixel
+pixels[7] // the ALPHA value of the second pixel</code></pre>
+
+<p>Once you've altered the pixels of the <code class="language-javascript">imageData</code> object, you need to put the updated pixels values on the canvas with the <code class="language-javascript">putImageData()</code> method of the context object:</p>
+
+<pre><code class="language-javascript">ctx.putImageData(imageData, 0, 0);</code></pre>
+
+<h5>Objectives</h5>
+
+<p>Add the following attributes to the sliders:</p>
+
+<ul>
+	<li>The brightness slider should have the <code class="language-javascript">min="-255" max="255" step="1"</code> attributes.</li>
+	<li>The contrast slider should have the <code class="language-javascript">min="-128" max="128" step="1"</code> attributes.</li>
+	<li>A transparent slider should have <code class="language-javascript">min="0" max="1" value="1" step="0.1"</code> attributes.</li>
+</ul>
+
+<p>Once users upload an image and save the image's initial pixel values, the pixels will change each time users move a slider. Add the event handlers to these sliders.</p>
+
+<p>If users change the brightness value, use the following formula to change the initial pixel values:</p>
+
+<pre><code class="language-no-highlight">RED = Truncate(RED + Brightness)
+GREEN = Truncate(GREEN + Brightness)
+BLUE = Truncate(BLUE + Brightness)</code></pre>
+
+<p>If users change the contrast value, use the following formulas to change the pixel values:</p>
+
+<pre><code class="language-no-highlight">Factor = 259*(255+Contrast)/(255*(259-Contrast))
+RED= Truncate(Factor * (RED - 128) + 128)
+GREEN = Truncate(Factor * (GREEN - 128) + 128)
+BLUE = Truncate(Factor * (BLUE - 128) + 128)</code></pre>
+
+<p><code class="language-javascript">Truncate</code> keeps the values in the valid range, from 0 to +255. If a value goes below 0, it will be truncated to zero; if a value goes beyond 255, it will be truncated to 255.</p>
+
+<p>If users change contrast and brightness together, change the contrast first, and then change the brightness of the resulting pixels.</p>
+
+<p>If users change the transparency of the image, use the following formula to change the initial pixel values:</p>
+
+<pre><code class="language-no-highlight">ALPHA = ALPHA * Transparent</code></pre>
+
+<h5>Example</h5>
+
+<p><em>An example of your app</em></p>
+
+<p><img alt="" src="https://ucarecdn.com/c1a0070e-6047-4e50-9349-5a8abdf3bb9f/"></p>

@@ -1,0 +1,380 @@
+type: edu
+files:
+- name: src/index.html
+  visible: true
+  text: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hypergram</title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+  learner_created: false
+- name: test/images/testImage.png
+  visible: false
+  text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAE4UlEQVRIS51WTUxcVRT+7n3zg5SfdlpIjUlpqC5qC5WVqN2LStNhY+K0NdVVuzWi4EJjTJA6LowxqSb+kBTHZSE0hkCjCRBlZwu0uBHb1BjS4EA7Uebvvavn/rz35s2bofUtZu4779zzfec75/6w9u8nxUakEwIWBATkw+jHMQMwAQhORhooF+2kbHKCdPLG9M603Z2i5zMGhtkbbigVxASS6Dq+H5CC+/1MVDIzPZ0DjIjX8JNhZ5eJWmUW8lUT8NHystWMhM6K/rlxpH8iV/+pzNjg+8GMWkYIXwmUIpRl2ATi7peefEkFRZrhqpa6xlyPt3YgOf0lcB0C9RSWvwaV6TMRrLH57mehbRKQeTWX1dDvrrvj2aQSQIJvICvaPFWk3SHglRCUAHsJYurmyeX2BncAx9RJ+SUYASZ8vWNgFFmGGZKaoZP/hi5+XTpOlge8fnNF8DWMW6tKBRPsL2TFXtA/BciKfUhFx5EppuS7yn6vqlTn1SmhABmWnWOyAdacQ15Xy+RrLQuVpQH00zgb/Rpjpdd9LULEba+5Xv1hUDxq/YkWbCHGbNmlFwvn0cWXZL0mnQG9mYQvjwTLyg8kayqawaLdi15rEdPlPmkfjo9iMJ9GKvotMuUUElCqsHfnXhbNuC8BNx1Vk5HCMDr5msx0TRxSS4a2r+CjTQRogIxLX2QaPdY1d8Zg/iNJjMApLkvP9anpcnvTDSIc+b5QelbaJm2qeQgwgFQkg2lbZxcbxT3Rgj/EYzjCV6t4/mI/pYAp6jtzp8QeKZfpSu2vwYcLIyiLmDIGXJRREUrHB12HG/ZhHLFuVkz4sDjk63KApedfDE9FxnQwWPjYMHEbw01FqkSgb4YfGprpptiNz0vn3F6QOZz88QNxPPJTaDqbzh6MFId9klVzpOaixko3vB2QVvnS7zW7R46NzBI4Pf+CuFg8h/OxLyoAFkrPYdJJVtXJfyzKTi29orKuAvbKQDWirG85HciUT6nmujD/kuCC1pfaUYhhJp9EkTfhlnMAjzj3sM1bZXAa09PqrLuECmwXkvFZtPEsdvFiNVEAb21fkLureRgcsMaZefFG/DO0sJzbKMy9EDB8db8POYv2WoZm564cJ+w7KKEBbfaveLrxDq7/3QomHBxr3kZ7rIhtmyNesMEbGbKfOuAtwPX+uMT9hyXQKLJg/RMnhRAMgnPsjth4fCaP6ICFuCWQty0sbsVQ4g1SiigKSibqeNNynIMJG082laXFYkDz7zY5A3RrKQhsHbSwmovoGeocYP2XCdiTofu7ApZScd8Vh5a0OvAlnj4/pC1kfTVwgSfGi2h6HsgdtLCSi+BwsyK1miM2qvYS2F+YrkwBywS8w3P09gmsdEzV9FJxGmp+Z/2XkwHgfOiEo7f7sdJxpSpQLXtXpjqO37cK2B85OXQWE6NjrunSOHDm9E5aAPu7f0bbUM/DZbxzWM+DANaXngmZEtxognutrvGlcYYzpwV2qhshGN8wgt78ylujP25y6DVMjH5T2Vx+h6njGzixsO+BBDDBHsjZLKpgV9fPxPv6f8D8sdnQJ18Ksyze77qL95bb6xKvXw4G1YCqxkFf9X5FXvd1V4efjGFZ1arx/u5FrC/11ldbAMlhqvEYVMYH9EYQetA/TOXqNLh7Y2YQ/91S/wXtwCFuAL7UBQAAAABJRU5ErkJggg==
+  learner_created: false
+- name: test/images/testContrast.png
+  visible: false
+  text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAEZklEQVRIS51XXWhbZRh+vu/kLGuWBIrWbmNanDWVhmW92Nyu4hDG2JjDgQMZghTcECEIXtSq69UczuiFEJCBg96JoNIiYVq8GPRChMFYW1KWQYeloTTIcKYn7cLJ+Y58Pyfn5OTkZPW9yffzfs/z/veU4GHJxq5RtAlt34IBiKgzvu4m/js/Dt9zHQoQrNt2CJRQEhJG6ABwHY5GJHiYBBN7H3kJ/eQOCf/Vwon8t+3EQd454VEh6oB37oN4Q0JPsKFC7VV6GrAeoQxNzVPl2Js/vvanwW+kN8eiKDcBlnBrROn3Li4/cVBIecU3fRe0DrA9wYkXHldUqCNlpLUZoVhqTHZWpT8VQZBUecd/eWjYHmT7JjFfvy61He9F4W/ctyUhRck6D1ALaL7iwobl29FyCD3GnO77AL9uf+ue+AqNnPw7Z6d3LWEfKogRE6AUOeMW0tosYFOUmhPhfSK8432eQLbvY8yb48jq05hvXBHHhfgYcrUVedf4EkANYEmQqdox+zlsCMI1a0go5zdvA5H7AGMAG5VhD6pi5YUElUSOZKOf44L+U2vfRs4AUqgNyclFOTIfOdx6S+xvbL8nU2AG5FxBZqPcS+VdbAzrbB/u2Rmc0eY6IvWj+ZbyGiATtRP283TVJXXUFXnOeNjeCl0CX4gfbGHcMk/hjP5bG2Zu655sKyWkYBzsPquZhZzxV/ccq/B7Sd1h7TQ0sMYOIP+k2KoFviDpR9fs96M3Oz0GsGa9gHz9do/iksVSSL7k05P+8DL42bwg1rK4pJCC8aKd2yqiEHvD89DGje3LKFmTnaSethBFtS3BOon5qRNMIrz+03oV842vhDXkG2PY1pgpy5b3PIAPa3kgMgA0jwDWOqDtlwbwNZfmsmsQfRbvxK9jOLKKZ7R6YHRyj1c6uoKgYtifJE5iL6m2LKTOhOc9vXEF0F8GGAWsslybdwEkEDd/x7v9dzHzaD8oa+L84L9Ixep4bEaQMExo/QSrr1vQ9gIzV+PCqH/oEPrZKkhqKW0zRsEiGg5ETbz2RQ27v9YR123UTB3TlRieRJIiFLthiN6mvOKV8HeUmTg90BAnOgUG/zCBPj4iKbDJUDmuY64aVS/kKCSphbTNPHX95mUDs9/F3fTwJBAm+lrw8Va31VnAVElGGE6Mb2HgU6B6XEexGsWpQWnUXJVbw0URexNz7pKBXzhxDzl75xqKRz/rqiVxkl3vSWrhUFsfn7tUC3xw9s5VFI9OdQB1Ow/C8ep2EHuR84e/x8TCxdZReRwYme4VC2A0s4ThY0M787g3rKvBCZYXDwU86fWdq3JcHqcYmWbolTfO4OgGGei+b/9q9OLmD/+AiYW3ZVU7IF6FcmYFI4v+MRgcDwdsJ9FqI+72MCgS/4fMi08+ujlrO21RzjzAyGIq1PDwdFDIApQ59uvK/ZT49ldVHfz/SZBX3XI8milheTEdHm0byI/xHF+E9PiIGgTqA2Qnueqp6/6BUtOQgpEm/gPNJ9QOGP9afAAAAABJRU5ErkJggg==
+  learner_created: false
+- name: test/images/testBrightness.png
+  visible: false
+  text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAADaklEQVRIS+2Vz0tUURTHP3emsvJXSYrRIujHwvxRLiKttlGLDCGiH4jZskWbwMBVtKlFf0BtojKZAhmyXxC0lRQKytEyIkIqSiK0MtKxZk7c+959vpl58yNJVx14897cd875nu8533ufOiUiXwBxLwJM5XgX5F/ImjosojEX3f4DL1rLF7zVFcBEkGAXSlzZAG0NHuMNQD1vzPodNs2r5RZM37VppscYJkK9+e8vRnWJiAOoGGajcXj7l7BB7Dp4wjW2Z82kHshTWctHyvjKMhKmgEscd9kr7rjFZMuQyi7GIA00EeMhDSaki246aecYMSI0eKzVC4lKKd8N4KRZhvO0oFtfKHud1ALZAvcRo5HnXr1+cL2o3slV9+TSB6O+tCXNcz87zT3XzP2gmt03yvjAOmoZzWjSM7YZ1gZ4SO7KaiMDC2r9HfAujvO7gJlf5LqX4wU11PIyJecF2lO2lXon13Oc1Uk66cgL6wd1Pjf2s+KQmWQVlzngKd0wjshr2c3jAMY6YLWZdy6zir5Id5qbw0f/PqfRPNs2uzO+JlrFJ1MChX525d3PVqk6USawhTUwhvUY64mw1ZnxmHRLyN1G1jVCK7OUMEaYFcC0y0U/ayvnh8cuTjGtPKKSCYqZDWzOGdoNc2tGxidE5DS3KWPK+9wrz01xhX1MUWmqLuWzea7gPb9YTiWv2MF7hihHkWQr01QxyzQhikgQQjERTRIqg6E9RQb3JxWsZAJ1QyIiaKgQq0iwaWCGpc1hihBmCDPIMgOibSlxU5wGsabjFAm2uNoPA6U/EtoZQgriwteSMKMscUMc4bnAc21oiMaJHXSqm2uNo9TUdln1pnZ3OcLm6Cwle2GqJMwIS6hxixo11TgDNcD+0PponOE04KDB1Y23MFJ9L3CmetHJ43QqyNQNuZkGPBMYUDe+n5Hq+xk5sq3XRzPz+H0zgP2ZW88eoe/cLW+prRd6DmUl4b2oZoDKaOPfMc6fds5DA4zTHBCSfhimH8fujNt6FT2HhHxz0wjWN/fcLZBTgD9v69mj9J27mSouv0MbX+hhTUENsMkKcnadMlRdqILnA+bPrZ59mhK7Ldr4TA9VOQvPPQ6FI8DMFs+1/D4hfSo42yn4yxjEKtuMqxlknKa83XZy3iKFcd6of+KgT8AkfwArb3FjojS+TgAAAABJRU5ErkJggg==
+  learner_created: false
+- name: test/images/testTransparent.png
+  visible: false
+  text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAEJklEQVRIS51XXWgcVRT+5jAuwzYJcYmLiJQQig9tWeKLVvRVWmwloQ9C6v9T8FWIMQo6IrYs++CDSBURFYnBJ1NKwRBEQhTbJ+uaFnwJQYqUEjZpDcswDBc9587PnZ+dWb0szP0593znO+fcc+9azSuX3F17CgBBIWzE33gEUoAinkzmWF43ngvXFH8NuUgk0hvvJ1hYv+HG84WK00bkAZPdKcvZ2pRhhhzAwL8bwKaJEZMixWklMoqBZFAgkAM2GZfIx3aY7o5AsiEIxznXR3I5V5cZaiqLSA0AlOjYg11F4uoixllWrCh0X1E0YnEjPGGONWgXPTQBFQpxkiqVjbGZ1hnwCNjIzJiSTnvzSEAAVaPYhcJ4TTOeom206LoIrgZn8/kRK84mUqK7AWY3Af6yAu6fs5fxjT8nQpr9hPStqfXLrgYkdFVLsnNbHTHOZ/Y4mSQ0ywjQXHnF/gJfBq8mU2J4EHvFeumHN9yH7L8win3UeIEIF715tKgrxqyq2UzhSHuvgZ5M9NDAOXsFV9XjOEHX8H1wUuaXnDYWvI5mHsyB5VnWemfjOXcU9wRwL4zJeW9RXM9tW03JWrpqpcEZMAKKVk7Za3jU1qHjtuC1xTAGF1d3Nk7pAiLKw8YZSISf/SdkYlWdHQgsoCpkV2vjrhrDLTyMY3QzbR2AX4PpBPitjRfc+0m7K9VC8CXvAwSo5dcTK6XXcRbjmRvBURyz08AX/MVUlludzWeMkpkHX/A7JaDaSx1noUQG2FPj+CSYF5noiFmzP77vPmn/UriRY37eT5gUCUXJYjI25bga/BZMy1QUX+4L44v+PF6rfZrSy/HVGT2oUZypWVcX7WDWO2oyiXF784xLis8XyY8tXPFm4NMIdtRh1NU++jQuurjPbUzdjnX7GMGss44J6uEQ+YVWLvbbSWELb36rvrbpvu58DDlSYYufBET4/N5JHBBXG8KIuiP9hroFHw6awR94rP4nuv1xqb/TY308UPPRDwiOr0B1YO8jBRoDrp92RHsfDdTRg3Xmu1lJLn5hjNsKR9Y93DdDqNmAFxCu7dcQkN5kwxcA460i+0gpHB3RVYlP5eh2ADkIPPAU7k7auHlg3lYIgY37oPWth+6ck3nlhLeO8crRF3/+wndI4ZFlH4eeBv6etLF1YMdGmeAx48jNrZUQuCSteOn4zmlsTV4ZKFWlZ2jgQUCD5ouATdkcsElhZullXLrwVTz19TLw4vMVrgDwYOsqmkvTOmQDWilwFQQD3O6eqBIrXBfgiElV3FhDGethwhF5McXY3Hj5qV08+5N+LVS1bEiq5Hl9KFcXMfk/YKZB1psffuZGx+K943fw7laz1OCqcJihyMpGYz79/ymry2I8VKIpYOZtfVI048NhIaj+5zFM+NIyyZ+HpBr+W/X+ATW9x3k6pYDKAAAAAElFTkSuQmCC
+  learner_created: false
+- name: test/test.js
+  visible: false
+  text: |
+    const puppeteer = require('puppeteer');
+    const pixels = require('image-pixels')
+    const path = require('path');
+    const rimraf = require('rimraf');
+    const fs = require("fs");
+
+    const hs = require('hs-test-web');
+    const {onPage} = require('hs-test-web');
+    const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
+    const workingDir = path.resolve(__dirname, '../src');
+    const pagePath = 'file://' + path.resolve(__dirname, workingDir + '/index.html');
+    const imageFolderPath = path.resolve(__dirname, '../test/images/');
+    const initImage = imageFolderPath + '/testImage.png'
+    const brightnessTestImage = imageFolderPath + '/testBrightness.png'
+    const contrastTestImage = imageFolderPath + '/testContrast.png'
+    const transparentTestImage = imageFolderPath + '/testTransparent.png'
+    const multipleFilterTestImage = imageFolderPath + '/testMultipleFilters.png'
+    const downloadedFilePath = workingDir + `${path.sep}downloads${path.sep}result.png`;
+
+    function comparePixels(userPixels, correctPixels, errorMessage) {
+        if (correctPixels.length !== Object.keys(userPixels).length) {
+            return hs.wrong("Wrong number ox pixels on the canvas!")
+        }
+
+        for (let i = 0; i < correctPixels.length; i++) {
+            if (correctPixels[i] !== userPixels[i]) {
+                return hs.wrong(errorMessage)
+            }
+        }
+    }
+
+
+    async function stageTest() {
+
+        const browser = await puppeteer.launch({
+            headless: false,
+            defaultViewport: null,
+            args: ['--start-maximized', '--disable-infobar'],
+            ignoreDefaultArgs: ['--enable-automation'],
+            devtools: true
+        });
+
+        const page = await browser.newPage();
+        await page.goto(pagePath);
+        await page._client.send('Page.setDownloadBehavior', {
+            behavior: 'allow',
+            downloadPath: workingDir + path.sep + "downloads"
+        });
+
+        page.on('console', msg => console.log(msg.text()));
+
+        await sleep(1000);
+
+        rimraf.sync(workingDir + '/downloads');
+
+        let result = await hs.test(
+            onPage(page, () => {
+                const canvas = document.getElementsByTagName("canvas");
+                if (canvas.length !== 1) {
+                    return hs.wrong("There is should be 1 canvas element in the page!")
+                }
+                this.getPixels = () => {
+                    const canvas = document.getElementsByTagName("canvas")[0];
+                    if (canvas.width !== 30 || canvas.height !== 30) {
+                        return hs.wrong("After uploading an image into canvas it has wrong size!")
+                    }
+                    const ctx = canvas.getContext("2d");
+                    return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                }
+                return hs.correct()
+            }),
+            onPage(page, () => {
+                this.brightnessSlider = document.getElementById("brightness")
+                this.contrastSlider = document.getElementById("contrast")
+                this.transparentSlider = document.getElementById("transparent")
+
+                if (this.brightnessSlider === null) {
+                    return hs.wrong("Can't find a brightness slider! There is should be an input tag with #brightness id.")
+                }
+
+                if (!this.brightnessSlider.hasAttribute("min") ||
+                    !this.brightnessSlider.hasAttribute("max") ||
+                    !this.brightnessSlider.hasAttribute("step")) {
+                    return hs.wrong("Looks like your brightness slider doesn't have one of the following attributes:" +
+                        " 'min', 'max' or 'step'")
+                }
+
+                if (this.contrastSlider === null) {
+                    return hs.wrong("Can't find a contrast slider! There is should be an input tag with #contrast id.")
+                }
+
+                if (!this.contrastSlider.hasAttribute("min") ||
+                    !this.contrastSlider.hasAttribute("max") ||
+                    !this.contrastSlider.hasAttribute("step")) {
+                    return hs.wrong("Looks like your brightness slider doesn't have one of the following attributes:" +
+                        " 'min', 'max' or 'step'")
+                }
+
+                if (this.transparentSlider === null) {
+                    return hs.wrong("Can't find a transparent slider! There is should be an input tag with #transparent id.")
+                }
+
+                if (!this.transparentSlider.hasAttribute("min") ||
+                    !this.transparentSlider.hasAttribute("max") ||
+                    !this.transparentSlider.hasAttribute("step")) {
+                    return hs.wrong("Looks like your brightness slider doesn't have one of the following attributes:" +
+                        " 'min', 'max' or 'step'")
+                }
+
+                return hs.correct()
+            }),
+            onPage(page, () => {
+
+                const brightnessMinValue = parseInt(this.brightnessSlider.getAttribute("min"));
+                const brightnessMaxValue = parseInt(this.brightnessSlider.getAttribute("max"));
+                const brightnessStepValue = parseInt(this.brightnessSlider.getAttribute("step"));
+
+                if (brightnessMinValue !== -255 || brightnessMaxValue !== 255 || brightnessStepValue !== 1) {
+                    return hs.wrong("Brightness slider should have the following attribute values: " +
+                        "min=-255, max=255, step=1")
+                }
+
+                const contrastMinValue = parseInt(this.contrastSlider.getAttribute("min"));
+                const contrastMaxValue = parseInt(this.contrastSlider.getAttribute("max"));
+                const contrastStepValue = parseInt(this.contrastSlider.getAttribute("step"));
+
+                if (contrastMinValue !== -128 || contrastMaxValue !== 128 || contrastStepValue !== 1) {
+                    return hs.wrong("Contrast slider should have the following attribute values: " +
+                        "min=-128, max=128, step=1")
+                }
+
+                const transparentMinValue = parseInt(this.transparentSlider.getAttribute("min"));
+                const transparentMaxValue = parseInt(this.transparentSlider.getAttribute("max"));
+                const transparentStepValue = parseFloat(this.transparentSlider.getAttribute("step"));
+
+                if (transparentMinValue !== 0 || transparentMaxValue !== 1 || transparentStepValue !== 0.1) {
+                    return hs.wrong("Transparent slider should have the following attribute values: " +
+                        "min=0, max=1, step=0.1")
+                }
+
+                const brightnessDefaultValue = parseInt(this.brightnessSlider.value)
+                const contrastDefaultValue = parseInt(this.contrastSlider.value)
+                const transparentDefaultValue = parseInt(this.transparentSlider.value)
+
+                if (brightnessDefaultValue !== 0) {
+                    return hs.wrong("The default value of the brightness slider should be equal to 0!")
+                }
+
+                if (contrastDefaultValue !== 0) {
+                    return hs.wrong("The default value of the contrast slider should be equal to 0!")
+                }
+
+                if (transparentDefaultValue !== 1) {
+                    return hs.wrong("The default value of the transparent slider should be equal to 1!")
+                }
+
+                return hs.correct()
+            }),
+            async () => {
+                const uploadButton = await page.$("input[type='file']#file-input");
+                await uploadButton.uploadFile(initImage);
+                await uploadButton.evaluate(upload => upload.dispatchEvent(new Event('change', {bubbles: true})));
+                await sleep(500)
+
+                const userPixels = await page.evaluate(() => {
+                    return this.getPixels()
+                });
+
+                const {data} = await pixels(initImage)
+
+                const compareResult = comparePixels(userPixels, data,
+                    "After downloading an image into canvas it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                return hs.correct()
+            },
+
+            // testBrightness 87
+            // testContrast 69
+            // testTransparent 0.5
+
+            async () => {
+                let userPixels = await page.evaluate(() => {
+                    this.brightnessSlider.value = 87;
+                    this.brightnessSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                let realPixels = await pixels(brightnessTestImage)
+
+                let compareResult = comparePixels(userPixels, realPixels.data,
+                    "After increasing brightness of the image it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.brightnessSlider.value = 0;
+                    this.brightnessSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(initImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After decreasing brightness of the image to the default value it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.contrastSlider.value = 69;
+                    this.contrastSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(contrastTestImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After increasing contrast of the image it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.contrastSlider.value = 0;
+                    this.contrastSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(initImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After decreasing contrast of the image to the default value it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.transparentSlider.value = 0.5;
+                    this.transparentSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(transparentTestImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After decreasing transparent of the image it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.transparentSlider.value = 1;
+                    this.transparentSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(initImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After increasing transparent of the image to the default value it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                userPixels = await page.evaluate(() => {
+                    this.brightnessSlider.value = 92;
+                    this.brightnessSlider.dispatchEvent(new Event("change"))
+
+                    this.contrastSlider.value = 128;
+                    this.contrastSlider.dispatchEvent(new Event("change"))
+
+                    this.transparentSlider.value = 0.8;
+                    this.transparentSlider.dispatchEvent(new Event("change"))
+                    return this.getPixels()
+                });
+
+                realPixels = await pixels(multipleFilterTestImage)
+
+                compareResult = comparePixels(userPixels, realPixels.data,
+                    "After applying multiple filters to the image it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                return hs.correct()
+            },
+            onPage(page, () => {
+                const saveButton = document.querySelector("button#save-button")
+                if (saveButton === null) {
+                    return hs.wrong("Can't find a button with #save-button id!")
+                }
+                saveButton.click();
+                return hs.correct()
+            }),
+            async () => {
+                await sleep(1000)
+
+                if (!fs.existsSync(downloadedFilePath)) {
+                    return hs.wrong("Looks like you didn't download a PNG file named 'testMultipleFilters.png', " +
+                        "after clicking on 'Save Image' button")
+                }
+                return hs.correct();
+            },
+            async () => {
+                const downloadedPixels = await pixels(downloadedFilePath)
+                const correctPixels = await pixels(multipleFilterTestImage)
+
+                const compareResult = comparePixels(downloadedPixels.data, correctPixels.data,
+                    "After downloading an image from the page it has wrong pixel values!");
+                if (compareResult) {
+                    return compareResult
+                }
+
+                return hs.correct();
+            }
+        );
+
+        rimraf.sync(workingDir + '/downloads');
+
+        await browser.close();
+        return result;
+    }
+
+
+    jest.setTimeout(30000);
+    test("Test stage", async () => {
+            let result = await stageTest();
+            if (result['type'] === 'wrong') {
+                fail(result['message']);
+            }
+        }
+    );
+  learner_created: false
+- name: test/images/testMultipleFilters.png
+  visible: false
+  text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACPklEQVRIS+2UP2gUQRjFf6vin2pR/NNGCAoJWAQEG0XstEqTQtjFJZUQuCAWQRsRbARBcijELmEFCyGFhZVlKrMcqCAEBCvFNIGDFP4f+eZ27+bmdnYnxxGbTLPHzDfvfe+9+yaIlMr4DyvYI94t1/es3i2nsazezIlPjayBkBZtpgbwcmIh3A8cHxnhaV7zmWtOvGBBvcmu8opJtjialyWkwM6bCVmnzXmKr8AtEyN45p7sBx/VjewMfzRli2P622RxR8ptULkse4s0uzg2efBbRc4nM+FhHoE7c1vdB46wyjT3eDHQ/DwN7YhW/FY1sim2nAo7ttcvsbRY97k+QGzjVCoWIB9ik7SsxRYhTZ70HQWR+pIts1AqSTL3zdtF/he4RUPjFzZrqyVjUWVfTHgEVM+znW9VIKJ6hYg2FzoZf1dRdsC4IR3OeuZaXLvCAy6xwZiDuSwu/YDcZpZJfnWv7TMAyjP+ARwCnhGxxnM9hj9J2OYy8BU4CYig9RgOTsDjOwXoOPBJnszeOIXA3EsIZ+AE8A24q+vlpJOSayX5wWHgrFX0Tj8k/auPWI7mYnjqN0HOJgRjPIUNYElPRmeZ5EMT3yRlyZhdu4s6Ad7ELiLXfhmxWTtAbHaexilx2nuR5GfsEcM54GJNZJXEVXMpZ0Lwvq7Ica6JCyV1uQlGlWqfOAoX+xSbF8XRnsnVsuxIfEzwsrpMyTBkZkPBmlJZMRY+KuviMKOwa4f+V1dl7PtH62ZsKvbJZlQ1/wCm4/pMsVG1DgAAAABJRU5ErkJggg==
+  learner_created: false
+feedback_link: https://hyperskill.org/projects/199/stages/992/implement#comment
+status: Unchecked
+record: -1
