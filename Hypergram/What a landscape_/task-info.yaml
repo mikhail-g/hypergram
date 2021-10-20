@@ -128,10 +128,79 @@ files:
         }
     );
   learner_created: false
+- name: src/style.css
+  visible: true
+  text: |-
+    body {
+        background-color: lightgrey;
+        margin: 1vh;
+    }
+
+    .main-container {
+        height: 98vh;
+        display: flex;
+    }
+
+    .image-panel {
+        flex-basis: 80%;
+        background-color: aliceblue;
+    }
+
+    .right-panel {
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+        background-color: skyblue;
+    }
+
+    .right-panel-content {
+        display: flex;
+        flex-flow: column;
+        flex-basis: 100%;
+    }
+
+    .right-panel-item {
+        display: flex;
+        flex-flow: column;
+        margin: 15px 30px;
+    }
+
+    #file-input {
+        display: none;
+    }
+
+    label {
+        text-align:center;
+    }
+
+    .button {
+        line-height: 30px;
+        height: 30px;
+        background-color: pink;
+        border: none;
+        border-radius: 0.25em;
+        font-family: arial, sans-serif;
+        font-size: 0.9em;
+    }
+
+    .button:hover {
+        background-color: lightpink;
+    }
+
+    .button:focus {
+        background-color: #6f698d;
+    }
+  learner_created: true
 - name: test/testImage.png
   visible: false
   text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAE4UlEQVRIS51WTUxcVRT+7n3zg5SfdlpIjUlpqC5qC5WVqN2LStNhY+K0NdVVuzWi4EJjTJA6LowxqSb+kBTHZSE0hkCjCRBlZwu0uBHb1BjS4EA7Uebvvavn/rz35s2bofUtZu4779zzfec75/6w9u8nxUakEwIWBATkw+jHMQMwAQhORhooF+2kbHKCdPLG9M603Z2i5zMGhtkbbigVxASS6Dq+H5CC+/1MVDIzPZ0DjIjX8JNhZ5eJWmUW8lUT8NHystWMhM6K/rlxpH8iV/+pzNjg+8GMWkYIXwmUIpRl2ATi7peefEkFRZrhqpa6xlyPt3YgOf0lcB0C9RSWvwaV6TMRrLH57mehbRKQeTWX1dDvrrvj2aQSQIJvICvaPFWk3SHglRCUAHsJYurmyeX2BncAx9RJ+SUYASZ8vWNgFFmGGZKaoZP/hi5+XTpOlge8fnNF8DWMW6tKBRPsL2TFXtA/BciKfUhFx5EppuS7yn6vqlTn1SmhABmWnWOyAdacQ15Xy+RrLQuVpQH00zgb/Rpjpdd9LULEba+5Xv1hUDxq/YkWbCHGbNmlFwvn0cWXZL0mnQG9mYQvjwTLyg8kayqawaLdi15rEdPlPmkfjo9iMJ9GKvotMuUUElCqsHfnXhbNuC8BNx1Vk5HCMDr5msx0TRxSS4a2r+CjTQRogIxLX2QaPdY1d8Zg/iNJjMApLkvP9anpcnvTDSIc+b5QelbaJm2qeQgwgFQkg2lbZxcbxT3Rgj/EYzjCV6t4/mI/pYAp6jtzp8QeKZfpSu2vwYcLIyiLmDIGXJRREUrHB12HG/ZhHLFuVkz4sDjk63KApedfDE9FxnQwWPjYMHEbw01FqkSgb4YfGprpptiNz0vn3F6QOZz88QNxPPJTaDqbzh6MFId9klVzpOaixko3vB2QVvnS7zW7R46NzBI4Pf+CuFg8h/OxLyoAFkrPYdJJVtXJfyzKTi29orKuAvbKQDWirG85HciUT6nmujD/kuCC1pfaUYhhJp9EkTfhlnMAjzj3sM1bZXAa09PqrLuECmwXkvFZtPEsdvFiNVEAb21fkLureRgcsMaZefFG/DO0sJzbKMy9EDB8db8POYv2WoZm564cJ+w7KKEBbfaveLrxDq7/3QomHBxr3kZ7rIhtmyNesMEbGbKfOuAtwPX+uMT9hyXQKLJg/RMnhRAMgnPsjth4fCaP6ICFuCWQty0sbsVQ4g1SiigKSibqeNNynIMJG082laXFYkDz7zY5A3RrKQhsHbSwmovoGeocYP2XCdiTofu7ApZScd8Vh5a0OvAlnj4/pC1kfTVwgSfGi2h6HsgdtLCSi+BwsyK1miM2qvYS2F+YrkwBywS8w3P09gmsdEzV9FJxGmp+Z/2XkwHgfOiEo7f7sdJxpSpQLXtXpjqO37cK2B85OXQWE6NjrunSOHDm9E5aAPu7f0bbUM/DZbxzWM+DANaXngmZEtxognutrvGlcYYzpwV2qhshGN8wgt78ylujP25y6DVMjH5T2Vx+h6njGzixsO+BBDDBHsjZLKpgV9fPxPv6f8D8sdnQJ18Ksyze77qL95bb6xKvXw4G1YCqxkFf9X5FXvd1V4efjGFZ1arx/u5FrC/11ldbAMlhqvEYVMYH9EYQetA/TOXqNLh7Y2YQ/91S/wXtwCFuAL7UBQAAAABJRU5ErkJggg==
   learner_created: false
+- name: src/listeners.js
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/199/stages/990/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Wed, 20 Oct 2021 10:21:39 UTC
 record: -1

@@ -10,6 +10,9 @@ body {
 
 .image-panel {
     flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: aliceblue;
 }
 
