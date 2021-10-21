@@ -1,7 +1,7 @@
 let originalPixels;
-let brightness = 0;
-let contrast = 0;
-let transparent = 1;
+let brightness;
+let contrast;
+let transparent;
 
 const getCanvas = () => document.getElementById("canvas");
 const getCtx = () => getCanvas().getContext('2d');
@@ -12,7 +12,7 @@ const drawImageOnload = image => (_) => {
     canvas.width = image.width;
     canvas.height = image.height;
     ctx.drawImage(image, 0, 0);
-    originalPixels = getPixels();
+    originalPixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 };
 
 const fileInput = document.getElementById("file-input");
@@ -29,13 +29,6 @@ fileInput.addEventListener('change', (ev) => {
         }
     }
 })
-
-const getPixels = () => {
-    const canvas = getCanvas();
-    const ctx = canvas.getContext('2d');
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    return imageData.data;
-}
 
 const processPixels = (initialPixels, colorFun, alphaFun) => {
     const canvas = getCanvas();
