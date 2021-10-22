@@ -2,7 +2,7 @@ let originalPixels;
 const DEFAULT_BRIGHTNESS = 0;
 const DEFAULT_CONTRAST = 0;
 const DEFAULT_TRANSPARENT = 1;
-
+const RANGE_EVENT_TYPE = 'input';
 
 let brightness;
 let contrast;
@@ -58,7 +58,7 @@ const processPixels = (initialPixels, colorFun, alphaFun) => {
 
 
 const applyAdjustments = (Brightness, Contrast, Transparent) => {
-    if (originalPixels !== undefined){
+    if (originalPixels !== undefined) {
         console.log(`Brightness:\t ${Brightness}`);
         console.log(`Contrast:\t ${Contrast}`);
         console.log(`Transparent:\t ${Transparent}`);
@@ -75,38 +75,35 @@ const applyAdjustments = (Brightness, Contrast, Transparent) => {
 const applySavedAdjustments = () => applyAdjustments(brightness, contrast, transparent);
 
 const brightnessRange = document.getElementById("brightness");
-brightnessRange.addEventListener('change', (ev) => {
+brightnessRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
     brightness = parseInt(ev.target.value);
     applySavedAdjustments();
 });
 
 const contrastRange = document.getElementById("contrast");
-contrastRange.addEventListener('change', (ev) => {
+contrastRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
     contrast = parseInt(ev.target.value);
     applySavedAdjustments();
 });
 
 const transparentRange = document.getElementById("transparent");
-transparentRange.addEventListener('change', (ev) => {
+transparentRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
     transparent = parseFloat(ev.target.value);
     applySavedAdjustments();
 });
 
 const resetAdjustments = () => {
     brightnessRange.value = DEFAULT_BRIGHTNESS;
-    brightnessRange.dispatchEvent(new Event("change"));
+    brightnessRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
     contrastRange.value = DEFAULT_CONTRAST;
-    contrastRange.dispatchEvent(new Event("change"));
+    contrastRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
     transparentRange.value = DEFAULT_TRANSPARENT;
-    transparentRange.dispatchEvent(new Event("change"));
+    transparentRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
 };
 
-getCanvas().addEventListener('mousedown', (ev) => {
-    console.log('mousedown');
-    applyAdjustments(DEFAULT_BRIGHTNESS, DEFAULT_CONTRAST, DEFAULT_TRANSPARENT);
-});
+getCanvas().addEventListener('mousedown', (_ev) => applyAdjustments(DEFAULT_BRIGHTNESS, DEFAULT_CONTRAST, DEFAULT_TRANSPARENT));
 
-getCanvas().addEventListener('mouseup', (ev) => {
-    console.log('mouseup');
-    applyAdjustments(brightness, contrast, transparent);
-});
+getCanvas().addEventListener('mouseup', (_ev) => applyAdjustments(brightness, contrast, transparent));
+
+const resetButton = document.getElementById("reset-button");
+resetButton.addEventListener('click', (_ev) => resetAdjustments());

@@ -57,6 +57,6 @@ label {
     background-color: lightpink;
 }
 
-.button:focus {
+.button:active {
     background-color: #6f698d;
 }
