@@ -1,4 +1,9 @@
 let originalPixels;
+const DEFAULT_BRIGHTNESS = 0;
+const DEFAULT_CONTRAST = 0;
+const DEFAULT_TRANSPARENT = 1;
+
+
 let brightness;
 let contrast;
 let transparent;
@@ -28,7 +33,7 @@ fileInput.addEventListener('change', (ev) => {
             resetAdjustments();
         }
     }
-})
+});
 
 const processPixels = (initialPixels, colorFun, alphaFun) => {
     const canvas = getCanvas();
@@ -65,7 +70,7 @@ const applyAdjustments = (Brightness, Contrast, Transparent) => {
         const adjustTransparent = (alpha) => alpha * Transparent;
         processPixels(originalPixels, adjustColor, adjustTransparent);
     }
-}
+};
 
 const applySavedAdjustments = () => applyAdjustments(brightness, contrast, transparent);
 
@@ -73,25 +78,35 @@ const brightnessRange = document.getElementById("brightness");
 brightnessRange.addEventListener('change', (ev) => {
     brightness = parseInt(ev.target.value);
     applySavedAdjustments();
-})
+});
 
 const contrastRange = document.getElementById("contrast");
 contrastRange.addEventListener('change', (ev) => {
     contrast = parseInt(ev.target.value);
     applySavedAdjustments();
-})
+});
 
 const transparentRange = document.getElementById("transparent");
 transparentRange.addEventListener('change', (ev) => {
     transparent = parseFloat(ev.target.value);
     applySavedAdjustments();
-})
+});
 
 const resetAdjustments = () => {
-    brightnessRange.value = 0;
+    brightnessRange.value = DEFAULT_BRIGHTNESS;
     brightnessRange.dispatchEvent(new Event("change"));
-    contrastRange.value = 0;
+    contrastRange.value = DEFAULT_CONTRAST;
     contrastRange.dispatchEvent(new Event("change"));
-    transparentRange.value = 1;
+    transparentRange.value = DEFAULT_TRANSPARENT;
     transparentRange.dispatchEvent(new Event("change"));
-}
+};
+
+getCanvas().addEventListener('mousedown', (ev) => {
+    console.log('mousedown');
+    applyAdjustments(DEFAULT_BRIGHTNESS, DEFAULT_CONTRAST, DEFAULT_TRANSPARENT);
+});
+
+getCanvas().addEventListener('mouseup', (ev) => {
+    console.log('mouseup');
+    applyAdjustments(brightness, contrast, transparent);
+});
