@@ -1,18 +1,22 @@
 const puppeteer = require('puppeteer');
 const pixels = require('image-pixels')
 const path = require('path');
+const rimraf = require('rimraf');
+const fs = require("fs");
 
 const hs = require('hs-test-web');
 const {onPage} = require('hs-test-web');
 const sleep = (ms) => new Promise(res => setTimeout(res, ms));
 
-const pagePath = 'file://' + path.resolve(__dirname, '../src/index.html');
+const workingDir = path.resolve(__dirname, '../src');
+const pagePath = 'file://' + path.resolve(__dirname, workingDir + '/index.html');
 const imageFolderPath = path.resolve(__dirname, '../test/images/');
 const initImage = imageFolderPath + '/testImage.png'
 const brightnessTestImage = imageFolderPath + '/testBrightness.png'
 const contrastTestImage = imageFolderPath + '/testContrast.png'
 const transparentTestImage = imageFolderPath + '/testTransparent.png'
 const multipleFilterTestImage = imageFolderPath + '/testMultipleFilters.png'
+const downloadedFilePath = workingDir + `${path.sep}downloads${path.sep}result.png`;
 
 function comparePixels(userPixels, correctPixels, errorMessage) {
     if (correctPixels.length !== Object.keys(userPixels).length) {
@@ -39,10 +43,16 @@ async function stageTest() {
 
     const page = await browser.newPage();
     await page.goto(pagePath);
+    await page._client.send('Page.setDownloadBehavior', {
+        behavior: 'allow',
+        downloadPath: workingDir + path.sep + "downloads"
+    });
 
     page.on('console', msg => console.log(msg.text()));
 
     await sleep(1000);
+
+    rimraf.sync(workingDir + '/downloads');
 
     let result = await hs.test(
         onPage(page, () => {
@@ -278,7 +288,39 @@ async function stageTest() {
             }
 
             return hs.correct()
-        });
+        },
+        onPage(page, () => {
+            const saveButton = document.querySelector("button#save-button")
+            if (saveButton === null) {
+                return hs.wrong("Can't find a button with #save-button id!")
+            }
+            saveButton.click();
+            return hs.correct()
+        }),
+        async () => {
+            await sleep(1000)
+
+            if (!fs.existsSync(downloadedFilePath)) {
+                return hs.wrong("Looks like you didn't download a PNG file named 'testMultipleFilters.png', " +
+                    "after clicking on 'Save Image' button")
+            }
+            return hs.correct();
+        },
+        async () => {
+            const downloadedPixels = await pixels(downloadedFilePath)
+            const correctPixels = await pixels(multipleFilterTestImage)
+
+            const compareResult = comparePixels(downloadedPixels.data, correctPixels.data,
+                "After downloading an image from the page it has wrong pixel values!");
+            if (compareResult) {
+                return compareResult
+            }
+
+            return hs.correct();
+        }
+    );
+
+    rimraf.sync(workingDir + '/downloads');
 
     await browser.close();
     return result;

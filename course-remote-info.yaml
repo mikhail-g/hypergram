@@ -16,7 +16,7 @@ stages:
   is_completed: true
 - id: 992
   step: 14425
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: World Wide Web

@@ -375,6 +375,189 @@ files:
   visible: false
   text: iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACPklEQVRIS+2UP2gUQRjFf6vin2pR/NNGCAoJWAQEG0XstEqTQtjFJZUQuCAWQRsRbARBcijELmEFCyGFhZVlKrMcqCAEBCvFNIGDFP4f+eZ27+bmdnYnxxGbTLPHzDfvfe+9+yaIlMr4DyvYI94t1/es3i2nsazezIlPjayBkBZtpgbwcmIh3A8cHxnhaV7zmWtOvGBBvcmu8opJtjialyWkwM6bCVmnzXmKr8AtEyN45p7sBx/VjewMfzRli2P622RxR8ptULkse4s0uzg2efBbRc4nM+FhHoE7c1vdB46wyjT3eDHQ/DwN7YhW/FY1sim2nAo7ttcvsbRY97k+QGzjVCoWIB9ik7SsxRYhTZ70HQWR+pIts1AqSTL3zdtF/he4RUPjFzZrqyVjUWVfTHgEVM+znW9VIKJ6hYg2FzoZf1dRdsC4IR3OeuZaXLvCAy6xwZiDuSwu/YDcZpZJfnWv7TMAyjP+ARwCnhGxxnM9hj9J2OYy8BU4CYig9RgOTsDjOwXoOPBJnszeOIXA3EsIZ+AE8A24q+vlpJOSayX5wWHgrFX0Tj8k/auPWI7mYnjqN0HOJgRjPIUNYElPRmeZ5EMT3yRlyZhdu4s6Ad7ELiLXfhmxWTtAbHaexilx2nuR5GfsEcM54GJNZJXEVXMpZ0Lwvq7Ica6JCyV1uQlGlWqfOAoX+xSbF8XRnsnVsuxIfEzwsrpMyTBkZkPBmlJZMRY+KuviMKOwa4f+V1dl7PtH62ZsKvbJZlQ1/wCm4/pMsVG1DgAAAABJRU5ErkJggg==
   learner_created: false
+- name: src/listeners.js
+  visible: true
+  text: |
+    let originalPixels;
+    const DEFAULT_BRIGHTNESS = 0;
+    const DEFAULT_CONTRAST = 0;
+    const DEFAULT_TRANSPARENT = 1;
+    const RANGE_EVENT_TYPE = 'input';
+
+    let brightness;
+    let contrast;
+    let transparent;
+
+    const getCanvas = () => document.getElementById("canvas");
+    const getCtx = () => getCanvas().getContext('2d');
+
+    const drawImageOnload = image => (_) => {
+        const canvas = getCanvas();
+        const ctx = canvas.getContext('2d');
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+        originalPixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    };
+
+    const fileInput = document.getElementById("file-input");
+    fileInput.addEventListener('change', (ev) => {
+        if (ev.target.files) {
+            const file = ev.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = (e) => {
+                const image = new Image();
+                image.src = e.target.result;
+                image.onload = drawImageOnload(image);
+                resetAdjustments();
+            }
+        }
+    });
+
+    const processPixels = (initialPixels, colorFun, alphaFun) => {
+        const canvas = getCanvas();
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const pixels = imageData.data;
+        pixels.set(initialPixels);
+
+        for (let redIndex = 0; redIndex + 3 < pixels.length; redIndex += 4) {
+            let RED = pixels[redIndex];
+            let GREEN = pixels[redIndex + 1];
+            let BLUE = pixels[redIndex + 2];
+            let ALPHA = pixels[redIndex + 3];
+
+            pixels[redIndex] = colorFun(RED);
+            pixels[redIndex + 1] = colorFun(GREEN);
+            pixels[redIndex + 2] = colorFun(BLUE);
+            pixels[redIndex + 3] = alphaFun(ALPHA);
+        }
+        getCtx().putImageData(imageData, 0, 0);
+    };
+
+
+    const applyAdjustments = (Brightness, Contrast, Transparent) => {
+        if (originalPixels !== undefined) {
+            console.log(`Brightness:\t ${Brightness}`);
+            console.log(`Contrast:\t ${Contrast}`);
+            console.log(`Transparent:\t ${Transparent}`);
+            const Truncate = (number) => number < 0 ? 0 : (number > 255 ? 255 : number);
+            const Factor = 259 * (255 + Contrast) / (255 * (259 - Contrast));
+            const adjustContrast = (color) => (Factor * (color - 128) + 128);
+            const adjustBrightness = (color) => (color + Brightness);
+            const adjustColor = (color) => Truncate(adjustBrightness(adjustContrast(color)));
+            const adjustTransparent = (alpha) => alpha * Transparent;
+            processPixels(originalPixels, adjustColor, adjustTransparent);
+        }
+    };
+
+    const applySavedAdjustments = () => applyAdjustments(brightness, contrast, transparent);
+
+    const brightnessRange = document.getElementById("brightness");
+    brightnessRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
+        brightness = parseInt(ev.target.value);
+        applySavedAdjustments();
+    });
+
+    const contrastRange = document.getElementById("contrast");
+    contrastRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
+        contrast = parseInt(ev.target.value);
+        applySavedAdjustments();
+    });
+
+    const transparentRange = document.getElementById("transparent");
+    transparentRange.addEventListener(RANGE_EVENT_TYPE, (ev) => {
+        transparent = parseFloat(ev.target.value);
+        applySavedAdjustments();
+    });
+
+    const resetAdjustments = () => {
+        brightnessRange.value = DEFAULT_BRIGHTNESS;
+        brightnessRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
+        contrastRange.value = DEFAULT_CONTRAST;
+        contrastRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
+        transparentRange.value = DEFAULT_TRANSPARENT;
+        transparentRange.dispatchEvent(new Event(RANGE_EVENT_TYPE));
+    };
+
+    getCanvas().addEventListener('mousedown', (_ev) => applyAdjustments(DEFAULT_BRIGHTNESS, DEFAULT_CONTRAST, DEFAULT_TRANSPARENT));
+
+    getCanvas().addEventListener('mouseup', (_ev) => applyAdjustments(brightness, contrast, transparent));
+
+    const resetButton = document.getElementById("reset-button");
+    resetButton.addEventListener('click', (_ev) => resetAdjustments());
+  learner_created: true
+- name: src/style.css
+  visible: true
+  text: |-
+    body {
+        background-color: lightgrey;
+        margin: 1vh;
+    }
+
+    .main-container {
+        height: 98vh;
+        display: flex;
+    }
+
+    .image-panel {
+        flex-basis: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aliceblue;
+    }
+
+    .right-panel {
+        flex-basis: 20%;
+        display: flex;
+        align-items: center;
+        background-color: skyblue;
+    }
+
+    .right-panel-content {
+        display: flex;
+        flex-flow: column;
+        flex-basis: 100%;
+    }
+
+    .right-panel-item {
+        display: flex;
+        flex-flow: column;
+        margin: 15px 30px;
+    }
+
+    #file-input {
+        display: none;
+    }
+
+    label {
+        text-align:center;
+    }
+
+    .button {
+        line-height: 30px;
+        height: 30px;
+        background-color: pink;
+        border: none;
+        border-radius: 0.25em;
+        font-family: arial, sans-serif;
+        font-size: 0.9em;
+    }
+
+    .button:hover {
+        background-color: lightpink;
+    }
+
+    .button:active {
+        background-color: #6f698d;
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/199/stages/992/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Fri, 22 Oct 2021 09:55:45 UTC
 record: -1
